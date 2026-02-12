@@ -1,37 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Surprise</title>
+<title>Surprise Drive</title>
 
 <style>
 body{
-text-align:center;
+margin:0;
 font-family:Segoe UI;
+text-align:center;
 background: linear-gradient(135deg,#f6d365,#fda085);
+overflow:hidden;
 }
+
+h1{margin-top:120px;}
 
 button{
 padding:15px 25px;
 font-size:20px;
 border:none;
-border-radius:20px;
+border-radius:25px;
 cursor:pointer;
+background:white;
+color:#ff4da6;
+font-weight:bold;
+}
+
+.emoji{
+position:fixed;
+top:-20px;
+font-size:30px;
+animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+0%{transform:translateY(-10vh);}
+100%{transform:translateY(110vh);}
 }
 </style>
 </head>
 
 <body>
 
-<h1>I planned a long drive 🚗</h1>
+<h1>Long Drive Surprise 🚗</h1>
 <p>Bangalore → Masinagudi → Ooty → Coimbatore</p>
 
 <button onclick="celebrate()">YES</button>
 
-<div id="party"></div>
-
 <script>
 function celebrate(){
-document.getElementById("party").innerHTML="🎉🎉🎉🥳🥳🥳🎊🎊🎊";
+setInterval(()=>{
+let e=document.createElement("div");
+e.className="emoji";
+e.style.left=Math.random()*100+"vw";
+e.innerHTML="🎉";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),4000);
+},200);
 }
 </script>
 
