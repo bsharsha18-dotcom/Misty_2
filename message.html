@@ -1,41 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Letter</title>
+<title>Your Letter</title>
 
 <style>
 body{
-background:#fff0f5;
+margin:0;
 font-family:Segoe UI;
-text-align:center;
+background:linear-gradient(135deg,#ffd1ff,#c2e9fb);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
+/* envelope */
 .envelope{
-margin-top:120px;
-display:inline-block;
-padding:40px;
+width:350px;
+height:220px;
 background:white;
 border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-font-size:24px;
-animation:open 2s ease;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+position:relative;
+cursor:pointer;
 }
 
-@keyframes open{
-from{transform:scale(0);}
-to{transform:scale(1);}
+.flap{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:50%;
+background:#ff9a9e;
+border-top-left-radius:15px;
+border-top-right-radius:15px;
+transform-origin:top;
+transition:1s;
+}
+
+.letter{
+position:absolute;
+top:20px;
+left:20px;
+right:20px;
+bottom:20px;
+background:#fff0f5;
+border-radius:10px;
+padding:20px;
+font-size:20px;
+opacity:0;
+transition:1s;
+}
+
+.envelope.open .flap{
+transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+opacity:1;
 }
 </style>
 </head>
 
 <body>
 
-<div class="envelope">
-Write your emotional letter here ❤️
+<div class="envelope" onclick="openLetter(this)">
+<div class="flap"></div>
+
+<div class="letter">
+Write your personal message here ❤️  
+I missed you every single day. Welcome back.
 </div>
 
-<br><br>
-<a href="index.html">Back</a>
+</div>
+
+<script>
+function openLetter(e){
+e.classList.toggle("open");
+}
+</script>
 
 </body>
 </html>
