@@ -13,16 +13,11 @@ color:white;
 overflow:hidden;
 }
 
-h1{
-margin-top:60px;
-font-size:48px;
-}
-
 /* floating hearts */
 .heart{
 position:fixed;
 bottom:-20px;
-font-size:24px;
+font-size:26px;
 animation:float 8s linear infinite;
 }
 @keyframes float{
@@ -30,22 +25,28 @@ animation:float 8s linear infinite;
 100%{transform:translateY(-110vh);opacity:0;}
 }
 
+h1{
+margin-top:60px;
+font-size:48px;
+}
+
+.gif-area img{
+width:230px;
+margin:15px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
 button{
 padding:15px 28px;
-margin:20px;
+margin:18px;
 font-size:20px;
 border:none;
-border-radius:25px;
+border-radius:30px;
 background:white;
 color:#ff4da6;
 font-weight:bold;
 cursor:pointer;
-}
-
-img{
-width:220px;
-margin:15px;
-border-radius:20px;
 }
 </style>
 </head>
@@ -54,8 +55,10 @@ border-radius:20px;
 
 <h1>Welcome back to India, Misty ❤️</h1>
 
+<div class="gif-area">
 <img src="https://media.giphy.com/media/12XDYvMJNcmLgQ/giphy.gif">
 <img src="https://media.giphy.com/media/10LKovKon8DENq/giphy.gif">
+</div>
 
 <br>
 
